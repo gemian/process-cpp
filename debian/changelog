@@ -1,0 +1,246 @@
+dbus-cpp (5.0.1+gemian) stretch; urgency=medium
+
+  * Building for Gemian
+
+ -- Adam Boardman <adamboardman@gmail.com>  Tue, 20 Nov 2018 20:18:45 +0000
+
+process-cpp (3.0.1-5) unstable; urgency=medium
+
+  * Orphan package.
+  * Update Vcs-* headers to point to salsa.
+  * Bump Standards-Version to 4.1.5.
+
+ -- Chris Lamb <lamby@debian.org>  Tue, 24 Jul 2018 16:28:18 +0800
+
+process-cpp (3.0.1-4) unstable; urgency=medium
+
+  * Correct Vcs-Bzr -> Vcs-Git.
+
+ -- Chris Lamb <lamby@debian.org>  Sat, 17 Feb 2018 22:45:20 +0000
+
+process-cpp (3.0.1-3) unstable; urgency=medium
+
+  * Make the documentation reproducible.
+
+ -- Chris Lamb <lamby@debian.org>  Thu, 01 Feb 2018 10:15:27 +0000
+
+process-cpp (3.0.1-2) unstable; urgency=medium
+
+  * Update symbols files to fix FTBFS on mips64el and non-release 64bit
+    architectures due symbol differences. (Closes: #888724)
+
+ -- Chris Lamb <lamby@debian.org>  Mon, 29 Jan 2018 16:52:14 +0000
+
+process-cpp (3.0.1-1) unstable; urgency=medium
+
+  * Upload to / fork for Debian unstable. (Closes: #887961)
+
+ -- Chris Lamb <lamby@debian.org>  Sun, 21 Jan 2018 17:36:45 +1100
+
+process-cpp (3.0.1-0ubuntu5) zesty; urgency=high
+
+  * No change rebuild against boost1.62.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Tue, 01 Nov 2016 16:39:24 +0000
+
+process-cpp (3.0.1-0ubuntu4) yakkety; urgency=medium
+
+  * No-change rebuild for boost soname change.
+
+ -- Matthias Klose <doko@ubuntu.com>  Thu, 04 Aug 2016 08:30:21 +0000
+
+process-cpp (3.0.1-0ubuntu3) yakkety; urgency=medium
+
+  * No-change rebuild for boost soname change.
+
+ -- Matthias Klose <doko@ubuntu.com>  Sat, 23 Apr 2016 18:48:36 +0000
+
+process-cpp (3.0.1-0ubuntu2) xenial; urgency=medium
+
+  * Fix symbols file for s390x.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Mon, 30 Nov 2015 23:06:31 +0000
+
+process-cpp (3.0.1-0ubuntu1) wily; urgency=medium
+
+  * Bump version.
+
+ -- Thomas Voß <thomas.voss@canonical.com>  Tue, 21 Jul 2015 11:45:34 +0200
+
+process-cpp (3.0.0) wily; urgency=medium
+
+  * Bump major revision and so name to account for toolchain update.
+
+ -- Thomas Voß <thomas.voss@canonical.com>  Mon, 20 Jul 2015 20:39:56 +0200
+
+process-cpp (2.0.0+14.10.20140718-0ubuntu1) utopic; urgency=medium
+
+  [ Thomas Voß ]
+  * Bump major revision and so name to account for toolchain update.
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 18 Jul 2014 12:29:36 +0000
+
+process-cpp (1.0.1+14.10.20140522-0ubuntu1) utopic; urgency=medium
+
+  [ Pete Woods ]
+  * Add child_setup function to core::posic::exec.
+
+  [ Ubuntu daily release ]
+  * debian/*symbols: auto-update new symbols to released version
+  * New rebuild forced
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 22 May 2014 09:49:51 +0000
+
+process-cpp (1.0.0+14.04.20140328-0ubuntu2) utopic; urgency=high
+
+  * No change rebuild against boost1.55.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Sun, 27 Apr 2014 02:37:06 +0100
+
+process-cpp (1.0.0+14.04.20140328-0ubuntu1) trusty; urgency=low
+
+  [ Marcus Tomlinson ]
+  * Split environment variable at first occurrence of '=' rather than
+    splitting at every '=' (causes issues when a value contains an '=')
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 28 Mar 2014 09:40:37 +0000
+
+process-cpp (1.0.0+14.04.20140326.2-0ubuntu1) trusty; urgency=medium
+
+  [ Thomas Voß ]
+  * Bump so name.
+  * Fix death observer racyness.
+  * Factor out signalfd-based wait operations on operating system signals.
+  * Introduce interface SignalTrap and accompanying factory functions.
+
+  [ Ubuntu daily release ]
+  * debian/*symbols: auto-update new symbols to released version
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 26 Mar 2014 13:55:24 +0000
+
+process-cpp (0.0.1+14.04.20140322-0ubuntu1) trusty; urgency=low
+
+  [ thomas-voss ]
+  * Only generate docs in release mode by default.
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Sat, 22 Mar 2014 09:42:53 +0000
+
+process-cpp (0.0.1+14.04.20140317-0ubuntu1) trusty; urgency=low
+
+  [ Marcus Tomlinson ]
+  * Set fd flags to *_NONBLOCK as we are checking fd.revents before
+    reads anyway. Blocking reads are dangerous when recieving partial
+    payloads.
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Mon, 17 Mar 2014 10:10:41 +0000
+
+process-cpp (0.0.1+14.04.20140311.1-0ubuntu1) trusty; urgency=low
+
+  [ Ricardo Salveti de Araujo ]
+  * libprocess-cpp-dev should also depend on libproperties-cpp-dev.
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 11 Mar 2014 19:40:04 +0000
+
+process-cpp (0.0.1+14.04.20140311-0ubuntu1) trusty; urgency=low
+
+  [ thomas-voss ]
+  * Print issues with the forked child to std::cerr.
+  * Add a class DeathObserver for child processes that emits a signal
+    whenever a child process goes away (either signal'd or exit'd).
+
+  [ Marcus Tomlinson ]
+  * Check that processes added to children are alive, and stop reaping
+    dead processes on any error (except EINTR).
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 11 Mar 2014 11:03:13 +0000
+
+process-cpp (0.0.1+14.04.20140122-0ubuntu1) trusty; urgency=low
+
+  [ Łukasz 'sil2100' Zemczak ]
+  * Add conditional symbols for other 64-bit architectures which we
+    build in the archive.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 32
+  * debian/*symbols: auto-update new symbols to released version
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 11 Mar 2014 11:03:09 +0000
+
+process-cpp (0.0.1+14.04.20140121-0ubuntu1) trusty; urgency=low
+
+  [ Ubuntu daily release ]
+  * debian/*symbols: auto-update new symbols to released version
+
+  [ thomas-voss ]
+  * Added a cross-process synchronization primitive.
+  * Remove lcov as a build dependency. Remove unneeded cmake modules.
+    Adjust and clean up cmake setup.
+
+  [ Łukasz 'sil2100' Zemczak ]
+  * Get rid of the per-architecture symbols files, make some symbols
+    arch-conditional. Bump the standards version.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 30
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 21 Jan 2014 15:21:28 +0000
+
+process-cpp (0.0.1+14.04.20131212-0ubuntu1) trusty; urgency=low
+
+  [ thomas-voss ]
+  * Adjust throw specifiers for environment accessors. Adjust
+    std::system_error to std::error_code for non-throwing overloads in
+    this_process. Make c'tor of Process public to be able to "attach" to
+    existing processes.
+  * Introduce a testing namespace and a utility function fork_and_run
+    forcross-process testing of services and clients. Refactor function
+    object signatures to return a posix::exit::Status type instead of an
+    int.
+  * Refactor to namespace core.
+  * Fix pkgconfig setup to account for new namespace and include
+    structure. Add helper macros for cross-process testing.
+
+  [ Timo Jyrinki ]
+  * Add 2012, extend pkg descriptions, remove unneeded 'Section', add
+    one Suggests, run wrap-and-sort -a -t.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 26
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 12 Dec 2013 09:57:27 +0000
+
+process-cpp (0.0.1+14.04.20131105.1-0ubuntu1) trusty; urgency=low
+
+  [ Thomas Voß ]
+  * Initial package
+
+  [ thomas-voss ]
+  * Initial push.
+  * Add packaging setup.
+  * Incorporate feedback from first round of packaging review.
+  * Clean up copyright and add COPYING files.
+  * Add pkgconfig setup.
+  * Remove unneccessary COPYING.GPL.
+  * Fine-tune packaging setup.
+  * * Add initial symbols file * Adjust package description to be < 80
+    characters.
+  * Add initial set of doxygen documentation.
+  * Refactor Self to namespace as we do not hold state.
+  * Purge remaining references to environment.h/cpp
+  * Enhance test to check if access to this_process's streams work
+    correctly.
+  * Add a README.
+  * Remove posix::linux::Process, not needed right now.
+  * * Add noexcept(true) specifiers where appropriate. * Add
+    documentation from man proc for posix::linux::proc::process::Stat.
+  * Add missing graphviz build dep.
+  * fix-test-if-executed-with-root.
+  * * Refactor flags to rely on enum classes and operator overloads. *
+    Add handling of process groups.
+  * Fix failing test if test suite is run as root.
+  * Remove flaky test cases.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 20
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 05 Nov 2013 10:55:57 +0000

@@ -1,0 +1,91 @@
+Source: process-cpp
+Priority: optional
+Maintainer: Adam Boardman <adamboardman@gmail.com>
+XSBC-Original-Maintainer: Debian QA Group <packages@qa.debian.org>
+Build-Depends:
+ cmake,
+ debhelper (>= 11),
+ doxygen,
+ graphviz,
+ libboost-dev,
+ libboost-iostreams-dev,
+ libboost-system-dev,
+ libproperties-cpp-dev,
+ pkg-config
+Standards-Version: 4.1.5
+Section: libs
+Homepage: https://github.com/gemian/process-cpp
+Vcs-Git: https://github.com/gemian/process-cpp.git
+
+Package: libprocess-cpp3
+Architecture: any
+Multi-Arch: same
+Pre-Depends:
+ ${misc:Pre-Depends}
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends}
+Description: C++11 library for handling processes (runtime libraries)
+ process-cpp is a simple and straightforward wrapper around process creation
+ and control. It helps both with handling child processes and with interacting
+ with the current process. Some of its features include:
+ .
+  - Thread-safe get/set/unset operation on the current process's environment.
+  - Throwing and non-throwing overloads of functions when system calls are
+    involved.
+  - Seamless redirection of input, output and error streams of child processes.
+  - Type-safe interaction with the virtual proc filesystem, both for reading &
+    writing.
+ .
+ The library's main purpose is to assist in testing and when a software
+ component needs to carry out process creation/control tasks, e.g., a graphical
+ shell. To this end, the library is extensively tested and tries to ensure
+ fail-safe operation as much as possible.
+ .
+ This package includes the process-cpp runtime libraries.
+
+Package: libprocess-cpp-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Recommends:
+ libprocess-cpp-doc
+Depends:
+ libprocess-cpp3 (= ${binary:Version}),
+ libproperties-cpp-dev,
+ ${misc:Depends}
+Description: C++11 library for handling processes (dev headers and libraries)
+ process-cpp is a simple and straightforward wrapper around process creation
+ and control. It helps both with handling child processes and with interacting
+ with the current process. Some of its features include:
+ .
+  - Thread-safe get/set/unset operation on the current process's environment.
+  - Throwing and non-throwing overloads of functions when system calls are
+    involved.
+  - Seamless redirection of input, output and error streams of child processes.
+  - Type-safe interaction with the virtual proc filesystem, both for reading &
+    writing.
+ .
+ This package includes all the development headers and libraries for
+ process-cpp.
+
+Package: libprocess-cpp-doc
+Section: doc
+Architecture: all
+Depends:
+ ${misc:Depends}
+Suggests:
+ libprocess-cpp-dev
+Description: C++11 library for handling processes (documentation)
+ process-cpp is a simple and straightforward wrapper around process creation
+ and control. It helps both with handling child processes and with interacting
+ with the current process. Some of its features include:
+ .
+  - Thread-safe get/set/unset operation on the current process's environment.
+  - Throwing and non-throwing overloads of functions when system calls are
+    involved.
+  - Seamless redirection of input, output and error streams of child processes.
+  - Type-safe interaction with the virtual proc filesystem, both for reading &
+    writing.
+ .
+ This package includes documentation files for the libprocess-cpp development.
