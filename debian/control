@@ -4,7 +4,7 @@ Maintainer: Adam Boardman <adamboardman@gmail.com>
 XSBC-Original-Maintainer: Debian QA Group <packages@qa.debian.org>
 Build-Depends:
  cmake,
- debhelper (>= 11),
+ debhelper (>= 10),
  doxygen,
  graphviz,
  libboost-dev,
