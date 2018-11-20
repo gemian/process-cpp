@@ -1,4 +1,4 @@
-dbus-cpp (5.0.1+gemian) stretch; urgency=medium
+process-cpp (3.0.1+gemian) stretch; urgency=medium
 
   * Building for Gemian
 
